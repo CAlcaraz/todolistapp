@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: ToDoListApp
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password:

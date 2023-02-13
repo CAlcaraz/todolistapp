@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db:
+    container_name: tech-meet-db
+    image: mysql:8.0.31-debian
+    restart: always
+    environment:
+      - MYSQL_DATABASE=techmeet
+      - MYSQL_ROOT_PASSWORD=dbpass
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./mysql-init-files:/docker-entrypoint-initdb.d
+volumes:
+  db:
+    driver: local

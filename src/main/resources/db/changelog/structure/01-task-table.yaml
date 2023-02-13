@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-task-table
+      author: camilo.alcaraz
+      changes:
+        - createTable:
+            tableName: task
+            remarks:  Task details table
+            columns:
+              - column:
+                  name: TASK_ID
+                  type: int
+                  remarks: Task Identifier
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: PK_TSK_ID
+                    nullable: false
+              - column:
+                  name: TASK_DESCRIPTION
+                  type: varchar(150)
+                  remarks: What will be done
+              - column:
+                  name: TASK_IS_COMPLETED
+                  type: boolean
+                  remarks: Indicates whether the task has been completed or not
+                  defaultValue: "false"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: TASK_CREATION_DT
+                  type: datetime
+                  remarks: Date/Time when the task was created
+                  constraints:
+                    nullable: true
+              - column:
+                  name: TASK_COMPLETION_DT
+                  type: datetime
+                  remarks: Date/Time when the task was completed
+                  constraints:
+                    nullable: true
+  - changeSet:
+      id: auto_increment_task_id
+      author: camilo.alcaraz
+      changes:
+        - addAutoIncrement:
+            tableName: task
+            columnDataType: int
+            columnName: TASK_ID
+            incrementBy: 1
+            generationType: BY DEFAULT

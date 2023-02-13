@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: /db/changelog/structure/01-task-table.yaml
+      context: dev, prod
