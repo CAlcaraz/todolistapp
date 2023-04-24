@@ -15,7 +15,7 @@ services:
       DB_HOST: tech-meet-db
       DB_PORT: 3306
       DB_USER: todolistuser
-      DB_PASSWORD: todolistpass
+      DB_PASS: todolistpass
       DB_NAME: techmeet
     volumes:
       - ./:/src
